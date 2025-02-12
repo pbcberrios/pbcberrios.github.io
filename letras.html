@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            background-color: #282828;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background-color: #383838;
+        }
+
+        .button img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="musicContainer">
+        <div class="button">
+            <img src="corazon.png" alt="Anterior">
+            Anterior Canción
+        </div>
+        <div class="button">
+            <img src="rosa.png" alt="Siguiente">
+            Siguiente Canción
+        </div>
+    </div>
+
+    <script>
+        function toggleVisibility() {
+            const container = document.getElementById('musicContainer');
+            container.style.display = 'flex';
+            setTimeout(() => {
+                container.style.display = 'none';
+            }, 8000); // Ocultar después de 8 segundos
+            setTimeout(toggleVisibility, 28000); // Esperar 20 segundos antes de volver a mostrarlo
+        }
+        
+        toggleVisibility(); // Iniciar inmediatamente
+    </script>
+</body>
+</html>
